@@ -15,9 +15,6 @@ Ext.define('CustomApp', {
             contentEl: Ext.ComponentQuery.query('#datepick')[0],
             margin: 10,
             handler: function(picker, date) {
-                if(this.down('#tc')) {
-                    Ext.getCmp('testcases-string').destroy();
-                }
                 this._onDateSelected(date);
             },
             scope:this
