@@ -32,7 +32,7 @@ Ext.define('CustomApp', {
         var formattedDate = Rally.util.DateTime.formatWithDefault(date, this.getContext());
         Ext.ComponentQuery.query('#datepick')[0].update((formattedDate) + '<br /> selected');
         Ext.create('Rally.data.wsapi.artifact.Store', {
-            models: ['UserStory','PortfolioItem/Feature'],
+            models: ['UserStory', 'Defect','PortfolioItem/Feature'],
             fetch: ['Name','FormattedID','PlanEstimate','PercentDoneByStoryCount','Milestones'],
             autoLoad: true,
             filters: [
