@@ -67,12 +67,14 @@ Ext.define('CustomApp', {
             milestones.load({
                 callback: function(records, operation, success){
                     _.each(records, function(milestone){
+                        console.log('TargetProject', milestone.get('TargetProject'));
+                        var target = milestone.get('TargetProject') && milestone.get('TargetProject')._refObjectName || 'All projects';
                         o.Milestones.push({
                             _ref: milestone.get('_ref'),
                             FormattedID: milestone.get('FormattedID'),
                             Name: milestone.get('Name'),
                             TargetDate: milestone.get('TargetDate'),
-                            TargetProject: milestone.get('TargetProject')._refObjectName
+                            TargetProject: target
                         });
                     }, this);
                     
